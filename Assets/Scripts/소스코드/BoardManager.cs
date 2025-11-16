@@ -60,12 +60,12 @@ public class BoardManager : MonoBehaviour
     {
         do
         {
-            // 🔹 1️⃣ 기존 보드 초기화
+            // 기존 보드 초기화
             ClearBoard();
 
             float boardWidth = (cols - 1) * cellWidth;
             float boardHeight = (rows - 1) * cellHeight;
-            Vector3 offset = new Vector3(boardWidth / 2f, boardHeight / 2f, 0);
+            Vector3 offset = new Vector3(boardWidth / 2f, boardHeight / 2f , 0);
 
             for (int row = 0; row < rows; row++)
             {
@@ -99,13 +99,12 @@ public class BoardManager : MonoBehaviour
                 }
             }
 
-            // 🔹 2️⃣ 매치 검사
+            // 매치 검사
             var matches = FindMatches();
 
-            // 🔹 3️⃣ 매치 있으면 다시 배치
+            // 매치 있으면 다시 배치
             if (matches.Count > 0)
             {
-                Debug.Log("⚠️ Initial match found — regenerating board...");
                 foreach (var b in matches)
                 {
                     if (b != null) DestroyImmediate(b.gameObject);
@@ -113,7 +112,6 @@ public class BoardManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("✅ Board initialized without matches!");
                 break; // 정상 종료
             }
 
@@ -121,7 +119,7 @@ public class BoardManager : MonoBehaviour
     }
 
     // --------------------------
-    // 🔹 매치 검사
+    // 매치 검사
     // --------------------------
     public List<Block> FindMatches()
     {
@@ -176,15 +174,15 @@ public class BoardManager : MonoBehaviour
         }
 
         if (matched.Count > 0)
-            Debug.Log($"✅ Total matched blocks: {matched.Count}");
+            Debug.Log($"Total matched blocks: {matched.Count}");
         else
-            Debug.Log("❌ No matches found.");
+            Debug.Log("No matches found.");
 
         return matched;
     }
 
     // --------------------------
-    // 🔹 매치 블록 제거
+    //  매치 블록 제거
     // --------------------------
     public void RemoveBlocks(List<Block> matched)
     {
@@ -240,7 +238,7 @@ public class BoardManager : MonoBehaviour
 
 
     // --------------------------
-    // 🔹 블록 떨어뜨리기
+    // 블록 떨어뜨리기
     // --------------------------
     public void DropBlocks()
     {
@@ -292,7 +290,7 @@ public class BoardManager : MonoBehaviour
     }
 
     // --------------------------
-    // 🧭 좌표 변환
+    //  좌표 변환
     // --------------------------
     private Vector3 GridToWorld(int row, int col)
     {
@@ -302,7 +300,7 @@ public class BoardManager : MonoBehaviour
     }
 
     // --------------------------
-    // 🪄 부드러운 이동
+    // 부드러운 이동
     // --------------------------
     private IEnumerator MoveTo(Transform t, Vector3 target, float duration)
     {
@@ -488,7 +486,7 @@ public class BoardManager : MonoBehaviour
     public Block[,] GetBoard() => board;
 }
 
-// 🔸 리스트 중복 방지용 확장 메서드
+// 리스트 중복 방지용 확장 메서드
 public static class ListExtensions
 {
     public static void AddUnique(this List<Block> list, params Block[] blocks)
