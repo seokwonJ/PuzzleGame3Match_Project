@@ -1,7 +1,5 @@
 퍼즐게임 제작중
 
-<img width="1039" height="891" alt="image" src="https://github.com/user-attachments/assets/d8415a85-27c6-40a9-94d3-ec55c57a6f02" />
-프로토 사진
 
 # 헥사 필 (Hexa Fill) - 모바일 헥사 퍼즐 게임
 
@@ -10,7 +8,8 @@
 
 ## 게임 플레이 (스크린샷)
 
-*(이곳에 게임 플레이 스크린샷이나 GIF를 삽입하세요)*
+<img width="1039" height="891" alt="image" src="https://github.com/user-attachments/assets/d8415a85-27c6-40a9-94d3-ec55c57a6f02" />
+프로토 이미지
 
 
 ## 주요 기능 (Features)
